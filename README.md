@@ -18,3 +18,4 @@ Perform topic extraction and text summarization on research articles related to 
  - [Text Extraction](https://github.com/nphan20181/nlp_project/blob/main/text_extraction.ipynb)
  - [Preliminary Data Preprocessing](https://github.com/nphan20181/nlp_project/blob/main/data_preprocessing.ipynb)
  - [Preprocessed Dataset](https://github.com/nphan20181/nlp_project/blob/main/data/article_fulltext_preprocessed.csv)
+ - [Data Cleaning](https://github.com/nphan20181/nlp_project/blob/main/data_cleaning.ipynb)
