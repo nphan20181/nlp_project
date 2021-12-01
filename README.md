@@ -25,7 +25,7 @@ Perform topic extraction and text summarization on research articles related to 
 ## Models
 
  - [Topic Extraction](https://github.com/nphan20181/nlp_project/blob/main/topic_extraction.ipynb)
- - [Text Summarization](https://github.com/nphan20181/nlp_project/blob/main/TextSummarization1.ipynb)
+ - [Text Summarization](https://github.com/nphan20181/nlp_project/blob/main/TextSummarizationFinal.ipynb)
 
 ## Web Application
 
