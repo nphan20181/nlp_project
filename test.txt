@@ -1,0 +1,267 @@
+As more information is being shared online, text summarization becomes extremely relevant. The most
+cited works in this field date back to 1958. Researchers proposed that the frequency of words can be
+used as a statistical measure in this process which still holds for certain methods.
+One such example is news articles. A person does not need to go through pages of articles for a given
+topic to understand the gist; a mere summary is more than sufficient in many cases. This has given rise
+to many apps that crunch through hundreds of articles to generate a personalized feed of summaries that
+a user can go through. Another example is social media platforms. These platforms can crunch
+through thousands of posts for a given topic, understand the content that overlaps, and then summarize
+this content. Text summarization can also be used to some extent to answer user queries directly in
+search results, something that search engines have been doing lately. As more information is shared and
+consumed, text summarization becomes more relevant. The two main categories of text summarization
+were extractive and abstractive. As the names themselves suggest, extractive emphasizes calculating
+weights of sentences and picking (top k sentences) them for the summary while abstractive emphasizes
+rewriting the sentences to generate the summary.
+The extractive method suffers a loss in meaning to some extent as the connections between sentences are
+lost when picking them while the abstractive method requires lots of effort in training the model and
+trying to avoid grammatical and semantic mistakes as sentences are often rewritten. Abstractive is
+language-dependent while extractive can be scaled to certain languages as the core idea remains the same.
+
+Consumption of information becomes a costly and time-consuming process as the information grows in
+size and with the presence of irrelevant material or noise. Text summarization can be used as a technique
+to filter them out. Manual text summarization works best as the meaning of the text can be retained as
+required while grammatical errors can be avoided. However, this is a time-consuming process with varying results. Another option is to use automatic text summarization. Computers can be equipped with algorithms to generate summaries for the provided content. However, the results might vary depending on the content and the algorithm used for this process.
+Automatic text summarization is widely used in different products and services which in return affects the user’s experience while engaging with products and services.
+Applications
+Notable social media platforms use this process to generate summaries for posts that are grouped based on the content called topics. These topics are used to engage users online. Google’s home feed for example generates summaries based on the user's preferences. Search engines today directly answer the provided query rather than just providing links. Text is extracted from ranked and credible websites and the summary is generated for this text which is returned as an answer to the query. The same concept is an application for voice-based assistants while answering the user’s queries.
+The objectives of this work are -
+Explore different techniques of text summarization, Compare the generated summaries. Identify the optimal parameters (for example, k in extractive text summarization) for the best summary. Identify or implement modifications (if possible) to scale an algorithm to different languages. And also Identify the different applications of automatic text summarization. 
+Advantages & Disadvantages
+
+Time-saving process:
+Computers are noticeably faster than humans and are capable of generating summaries faster.
+Might miss out on certain sentences affecting the summary’s meaning:
+Certain sentences that contribute to the summary might be omitted which in return might affect the generated summary.
+
+Scalable:
+Automatic text summarization can be scaled to different languages with the adoption of a proper algorithm whereas humans are limited by the extent of their expertise in a particular language.
+Efforts put into training the models might not exactly meet the required standards:
+Neural Network-based models require large resources and time to train. The results might not exactly meet the required standards or the level of manual text summarization.
+
+Wide usage:
+Automatic text summarization can be used in different fields as discussed in the overview, thereby enhancing the user’s experience while engaging with a product or a service.
+Grammatical mistakes - abstractive algorithms are prone to grammatical mistakes: Abstractive methods rewrite certain portions of sentences to generate the summary. There is a chance that these sentences might contain grammatical errors affecting the overall readability.
+Organization of work: First take an overview of the theory, concepts, and technology, Then check detailed methodology of each algorithm, compare the results and performance of all the methods.
+Conceptual View
+Concepts and Theory
+Theory Extractive
+The main concept used in the extractive text summarization is to focus on important sentences. Each
+sentence is assigned a weight. The heavier the weight, the more it contributes to the summary. There are
+different techniques for assigning weights to the sentences.
+For example:
+Word weighted frequency
+• Word’s frequency is calculated as - freq(word)/max(freq).
+Occurrence of important words
+• A sentence is assigned more weight if more number of important words occur in it. Important
+words can be picked by using certain filters that ignore stop words and other such common words
+and collapse adjacent occurring words.
+The other concept used is TextRank. TextRank works by building a graph of sentences. Each sentence
+is considered a node and the connection between 2 sentences is called an edge. This edge is assigned a
+weight or a score that tells us to what extent 2 sentences are connected. A sentence that is connected or
+linked to more number of sentences is deemed important and picked up while generating the summary.
+Top k sentences are picked based on their scores of weights following the greedy approach
+Abstractive
+This method is based on training deep learning models on data to help the model learn and understand
+language. Abstractive text summarization is a complex method that automatically helps the computer
+learn the grammar and semantics of a language and form new sentences to summarize the given text.
+These models are typically based on Recurrent Neural Networks [4]. Figure 1 depicts the RNN
+architecture. RNNs are a special type of neural network where the output from the previous step is fed
+as input to the current step. In normal neural networks, all the inputs and outputs are independent of each
+other. We use RNNs here because to predict the next word in a sequence of previous words and the
+context gained from them are required. The most important feature of RNN is the Hidden state, which
+remembers some information about a sequence. RNN is said to have a memory that can remember
+previously learned information.
+In an RNN, the current state is a function of the current input and previous state, each successive input
+is called as a time step.
+For the next time step, the new ht becomes ht-1. As much time phases as the issue takes, we will go and
+merge the data from all the previous states. Upon completion of all time steps, the final current state is
+used to determine the yt output. The output is then correlated with the real output, producing an error.
+To change the weights, the error is then backpropagated to the network (we shall go through the
+backpropagation information in further sections) and the network is trained.
+A special form called Long Short Term Memory Network is the RNN used here, which overcomes the
+issue of long-term RNN dependence.
+Concepts
+Term frequency - Inverse frequency text (tf-idf): It is also used as a weighting factor in data
+extraction, text mining and user modelling searches. The meaning of tf-idf increases proportionally
+to the amount of times a word appears in the text and is offset by the number of documents containing
+the word in the corpus, which tends to respond to the fact that certain words appear in general more
+often. One of the most common term-weighting schemes today is tf-idf. 
+a = TF(t) = (Number of times term t appears in a document) / (Total number of terms in the
+document).
+b = IDF(t) = log_e(Total number of documents / Number of documents with term t in it).
+Required tf-idf value = a * b.
+Vectors: Because there is no exact standard way for computers to compare strings or sentences, we
+convert them to vectors and then use vector-based operators to compute various values. One such example is cosine similarity.
+Cosine Similarity: Cosine similarity is a measure of similarity between two non-zero vectors of an
+inner product space that measures the cosine of the angle between them.
+Similarity = (A.B) / (||A||.||B||)
+where A and B are vectors.
+Stop words: Words that do not contribute to any meaning in NLP operations are called stopwords and
+are removed as part of preprocessing.
+Sequence2Sequence Modeling: This is used for a special class of sequence modeling problems that
+use RNNs, where the input, as well as the output, is a sequence. These models involve 2 architecture
+called Encoder and Decoder. Sequence modeling is used for Speech Recognition and Natural
+Language Processing for computers to understand natural language and predict word sequences.
+Encoder: This is a neural network with the purpose of interpreting and constructing a smaller
+dimensional representation of the input set. At any point, the encoder processes the information and
+collects the contextual information present in the input sequence. In order to initialise the decoder,
+the hidden state (hi) and cell state (ci) of the last time stage are used. Figure 3 displays the LSTM
+process for the encoder.
+Decoder: The representation of the encoder is redirected to it and a sequence of its own is created to
+represent the output. It reads the whole word-by-word and predicts one time-step offset of the same
+sequence. In the sequence given the prior word, it predicts the next word. The special tokens that
+are applied to the target sequence prior to feeding it into the decoder are <start> and <end>.
+Inference Process: This is the phase that comes after training of the model and is used to decode new
+source sequences for which the target is unknown.
+Attention Mechanism: This is used to focus on specific portions of the text to predict the next
+sequence. To implement the attention mechanism, the input is taken from each time step of the
+encoder.
+with weightage to the timesteps. The weightage depends on the importance of that time step for the
+decoder to optimally generate the next word in the sequence.
+Technologies Used
+Nltk corpus - for stop words
+Sklearn’s pairwise metrics - for cosine similarity.
+Tfidf vectorizer
+Google Colab – for GPU training
+Keras and Tensorflow
+Bahdanau attention – to overcome the problem of long sentences as a performance of a basic
+encoder-decoder deteriorates rapidly as the length of an input sentence increases
+Kaggle for data collection
+Methodology
+Extractive Method
+There exist many approaches or techniques as part of the extractive method. Mainly focus on word
+weighted frequency and text rank. Figure 5 depict the flow chart for extractive text summarization.
+3.1.1 Word Weighted Frequency
+The specified paragraph or text is first tokenized into sentences. For each sentence, then remove the stop
+words and punctuation. Because this entire model is based on frequency, need to keep track of each
+word’s frequency and the max frequency. Once we’re done with the preprocessing and the frequency
+calculation, for each sentence, we compute the weight. This is done by adding up the individual scores
+of all the words in each sentence where the score of a word is defined as - freq(word)/max(freq).
+Once the scores are calculated, the greedy approach is used to pick top k sentences (max k weights) to
+generate the summary. These sentences are reordered (re-sorted) in the order of their original appearance
+in the actual text. We also implemented this on Hindi text using Hindi stopwords and got good results.
+Word Probability
+Another method used is word probability where instead of dividing by max(freq), we divide by N,
+which is the number of all words.
+TextRank
+TextRank method is based on PageRank, an algorithm that is usually used to rank web pages for search
+results. It builds a matrix of size n x n and these cells are filled with the probability that the user might
+visit that site, that is 1/(number of unique links in web page wi). The values are then updated
+interactively.
+TextRank works similarly. It builds an adjacent matrix of size n x n where n is the number of sentences
+in the text. For each sentence ni (where i is an index), it is compared with nj (where i != j). This
+comparison is based on cosine similarity or some other technique through which 2 sentences can be
+compared. The entire matrix is filled in such a manner. Then for each sentence ni (where i = 1, 2, 3, and
+so on), the entire row is added to compute the score for ni .
+Top k sentences are picked based on this score through a greedy search. These sentences from the required
+summary.
+If the adjacency matrix is used, the time complexity increases to O(n^2) while the adjacency list reduces
+the complexity to O(v + e) while processing the graph.
+TextRank is better at realizing the connection between sentences. If vectors are used it is easy to apply
+cosine similarity. A connection in the graph between two sentences also tells us that both are required
+for a meaningful context. Thus TextRank works well. 
+
+Abstractive Method
+Abstractive methods use deep learning models to predict word sequences. We’ve used Long Short Term
+Memory networks, a special type of Recurrent Neural Network. These are implemented using Encoder-
+Decoder architecture set up in 2 phases – training and inference.
+To handle long sentences we’ve used the Bahdanau attention layer which helps to focus on particular
+most important parts of the sentence. The methodology used to implement this deep learning model: -
+Two datasets were used:
+News Summary Dataset from Kaggle contains 2 columns of text and headlines
+Food Reviews Amazon from Kaggle, contains multiple columns, most important are Text and Summary.
+Working Mechanism Procedure
+The model was implemented on Google Colab using Keras. The attention layer file was downloaded
+from the Internet; it implements Bahdanau attention as written in a published paper. First, review
+dataset was read (only top 100,000 rows). Duplicates and NA values were then dropped. The data was
+cleaned using typical text cleaning operations. Contraction mapping was done to expand English
+language contractions. (shouldn’t = should not). The text was cleaned by removing HTML tags,
+contractions were expanded, ‘s were removed, any parenthesis text was removed, stopwords were
+removed and short words were removed. The same was done to clean the summaries present in both
+datasets. Same text preprocessing was applied to the news dataset. Then the start and end tokens were
+added to the cleaned summary. The text lengths are analyzed to get the maximum length of the text and
+summary. The final data frame was created to contain that data only with text and summary below or
+equal to the set maximum. The data was split into train and test set with 90% in train and 10% in a test.
+The text and summary word sequences were converted into integer sequences using tokenizers and
+topmost common words. The Encoder model consisting of three LSTM layers stacked on top of each
+other was made and the Decoder was initialized with encoder states.
+A dense layer with softmax activation was added at the end. This was the setting up of the training phase
+for both Encoder and Decoder. The model was compiled using sparse categorical cross-entropy as the
+loss function. Early stopping was used to stop training the model if validation loss started increasing for
+reviews, the model stopped training at 14 epochs and for news, only 5 epochs were used due to time and
+machine power constraints.
+The encoder and decoder inference phase was set up, encoder inputs and outputs from training were
+supplied as inputs to inference. The decoder was set up in the inference phase and to predict the next
+word in the sequence, initial states were set to the states from the previous time step. An inference
+function to decode input sequence was created which creates target sequence until end token is reached
+or max summary length is reached. Then the summaries were generated for the test set.
+Implementation and Results
+Modules & Implementation
+Extractive
+Weighted Frequency
+Modules and methods:
+Python/TextSummarizer.py/Exhaustive
+GetWeightedFreq()
+Calculates the score for the specified word based on either word
+probability or word frequency method.
+PopulateFreq()
+Compute the frequency table.
+TokenizePara()
+Tokenizes the paragraph based on the delimiter.
+KTopRanks()
+Return K top words for summary formation.
+TextRank
+Python/TextSummarizer.py/TextRank
+ConvertToVec()
+Convert all the sentences to vector representation.
+SentenceSimilarities()
+Build the graph with sentences as nodes and compute the node edges
+(sentence similarities)
+KTopRanks()
+Return K top words for summary formation.
+Abstractive
+The source python notebook for a model on Reviews dataset can be found (open in Google drive with
+Google Colab or download).
+The source python notebook for a model on News dataset can be found
+Main modules and methods –
+clean_text()
+Used to clean the data text as well as the summary.
+decode_sequence()
+Used to predict the test sequences using the created models.
+Model
+It is based on Encoder-Decoder LSTM layers that are trained on the dataset and
+then set up for inference of the test set.
+For both the datasets, the same modules and models are used, giving varying results.
+Results
+We mainly evaluated news articles and general text for the models. We also implemented the Weighted
+Frequency on Hindi text.
+For general text comprehension, TextRank was slightly faster (about 10%) and performed slightly better
+amongst other extractive models as the sentences in the summaries generated by other models seemed
+disconnected. Results for a sample test case can be viewed. In this work, we used test paragraph for test
+summarization. Text paragraph 1 is in English and second text paragraph in Hindi.
+Original Text
+Test Paragraph: 
+Democracy is a form of the government where people get to choose their leaders. While there are
+many democratic nations in the world, the process of electing leaders of their choice and the
+formation of the government varies. While some countries elect Presidents, others elect Prime
+Ministers. Who gets to vote and how people vote is a major factor in democracy. Separation of
+powers and checks and balances exist to make sure that every institution controlled by a democratic
+government functions freely and fairly. It is widely considered that there are 4 key aspects of a democratic government - choosing and replacing a government through free and fair elections; participation of people in this process through voting; provision and protection of fundamental rights; and rule of law. There have been instances in history, where people fought for their right; right to vote and freely elect their leaders. Today, a healthy democracy not only lets people vote but also lets them hold their leaders accountable.
+Results
+Sentence Summary:
+It is widely considered that there are 4 key aspects of a democratic government choosing and replacing a government through free and fair elections; participation of people in this process through voting; provision and protection of fundamental rights; and rule of law.
+Sentence Summary:
+It is widely considered that there are 4 key aspects of a democratic government
+choosing and replacing a government through free and fair elections; participation of people in this process through voting; provision and protection of fundamental rights; and rule of law.
+Today, a healthy democracy not only lets people vote but also lets them hold
+their leaders accountable.
+Sentence Summary:
+It is widely considered that there are 4 key aspects of a democratic government choosing and replacing a government through free and fair elections;
+participation of people in this process through voting; provision and protection
+of fundamental rights; and rule of law.
+There have been instances in history, where people fought for their right; right
+to vote and freely elect their leaders.
+Today, a healthy democracy not only lets people vote but also lets them hold their leaders accountable.
+Conclusion
+This research shows the statistical-based algorithms can be used to generate fast and decent summaries. As more breakthrough research papers are published in the field of neural networks and the field of NLP and with hardware improvements (CPU + GPU), text summarization shall get more and more reliable. As the information that is being shared online increases every year and with more people spending their time on the internet, text summarization will be widely used to enhance both the user experience and the data delivery.
+There are ever-increasing research and better methods in the field of Natural Language Processing, and in the future, more complex work can be done using models with more layers or using completely new architectures, like Pointer Generator networks, etc. to help computers understand Natural Language like never before and use it in various fields.
