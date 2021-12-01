@@ -12,6 +12,7 @@ Perform topic extraction and text summarization on research articles related to 
 
  - [Project Proposal](https://github.com/nphan20181/nlp_project/blob/main/documents/Group_4_Project_Proposal.pdf)
  - [Project Increment 1](https://github.com/nphan20181/nlp_project/blob/main/documents/Group%204%20-%20Project%20Increment%201.pdf)
+ - [Project Report](https://github.com/nphan20181/nlp_project/blob/main/documents/Group%204%20-%20Final%20Report.pdf)
 
 ## Data Collection & Creation
 
@@ -25,3 +26,7 @@ Perform topic extraction and text summarization on research articles related to 
 
  - [Topic Extraction](https://github.com/nphan20181/nlp_project/blob/main/topic_extraction.ipynb)
  - [Text Summarization](https://github.com/nphan20181/nlp_project/blob/main/TextSummarization1.ipynb)
+
+## Web Application
+
+ - [Dash App](https://github.com/nphan20181/nlp_project/blob/main/web_app.ipynb)
