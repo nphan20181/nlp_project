@@ -30,3 +30,5 @@ Perform topic extraction and text summarization on research articles related to 
 ## Web Application
 
  - [Dash App](https://github.com/nphan20181/nlp_project/blob/main/web_app.ipynb)
+ 
+<img src="https://github.com/nphan20181/nlp_project/blob/main/app_main.png" width="80%" height="80%" />
