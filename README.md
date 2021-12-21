@@ -4,12 +4,6 @@ Perform topic extraction and text summarization on research articles related to 
 
 <img src="https://github.com/nphan20181/nlp_project/blob/main/app_main.png" width="80%" height="80%" />
 
-## Group 4
-
- - Nestor Molina
- - Ngoc Phan
- - William Baker
-
 ## Documents
 
  - [Project Report](https://github.com/nphan20181/nlp_project/blob/main/documents/Group%204%20-%20Final%20Report.pdf)
